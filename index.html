@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تدبر در آیات ۱۵ تا ۲۱ سوره جاثیه</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #101b27;
+  --panel: #172735;
+  --panel2: #203746;
+  --gold: #d8b875;
+  --gold-light: #f0dba9;
+  --cream: #f5efdf;
+  --muted: #b9c5c9;
+  --teal: #76b7ad;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--cream);
+  font-family: Vazirmatn, Tahoma, sans-serif;
+  background:
+    radial-gradient(ellipse at 50% -20%, #35505a 0%, transparent 48%),
+    linear-gradient(145deg, #0d1722, #142735 55%, #101b27);
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .1;
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0 27px, #d8b875 28px 29px, transparent 30px 56px),
+    repeating-linear-gradient(-45deg, transparent 0 27px, #d8b875 28px 29px, transparent 30px 56px);
+}
+
+header {
+  max-width: 1000px;
+  margin: auto;
+  padding: 35px 20px 15px;
+  text-align: center;
+  position: relative;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  margin: 12px 0 5px;
+}
+
+.subtitle {
+  color: var(--muted);
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 12px 18px 60px;
+  position: relative;
+}
+
+.card {
+  background: linear-gradient(145deg, #1a2b39ed, #142430f2);
+  border: 1px solid #d8b87535;
+  border-radius: 22px;
+  padding: clamp(18px, 4vw, 32px);
+  box-shadow: 0 18px 55px #0005;
+  margin: 16px 0;
+}
+
+.section-title {
+  color: var(--gold-light);
+  font-size: 1.15rem;
+  margin-top: 0;
+}
+
+.verse-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  border: 1px solid #d8b87570;
+  color: var(--gold-light);
+  padding: 6px 13px;
+  border-radius: 30px;
+  font-size: .85rem;
+}
+
+.arabic {
+  font-family: Amiri, serif;
+  font-size: clamp(2rem, 5.5vw, 3.2rem);
+  line-height: 2.2;
+  text-align: center;
+  color: #fff6df;
+  padding: 25px 8px 18px;
+}
+
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  margin: 5px 0 20px;
+}
+
+.player {
+  background: #0c1822a8;
+  border: 1px solid #ffffff18;
+  border-radius: 17px;
+  padding: 17px;
+}
+
+.player h3 {
+  color: var(--gold-light);
+  margin-top: 0;
+}
+
+.audio-row {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 17px;
+  font-weight: 600;
+  transition: .2s;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+button:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.primary {
+  background: var(--gold);
+  color: #1a2228;
+}
+
+.secondary {
+  background: #294352;
+  color: var(--cream);
+  border: 1px solid #ffffff20;
+}
+
+.outline {
+  background: transparent;
+  color: var(--gold-light);
+  border: 1px solid #d8b87575;
+}
+
+audio {
+  width: 100%;
+  margin: 12px 0 4px;
+}
+
+.small {
+  font-size: .83rem;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.status {
+  margin-top: 10px;
+  color: var(--teal);
+  min-height: 25px;
+  font-size: .9rem;
+}
+
+.translation, .analysis {
+  display: none;
+  animation: fade .4s ease;
+}
+
+.translation.show, .analysis.show {
+  display: block;
+}
+
+.translation {
+  border-right: 3px solid var(--teal);
+  padding: 13px 17px;
+  margin-top: 20px;
+  background: #76b7ad12;
+  border-radius: 10px;
+}
+
+.translation h3 {
+  color: var(--teal);
+  margin-top: 0;
+}
+
+.translation p, .analysis p {
+  line-height: 2.1;
+}
+
+.analysis {
+  margin-top: 22px;
+}
+
+.analysis h2 {
+  color: var(--gold-light);
+  font-size: 1.25rem;
+}
+
+.word-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 11px;
+  margin: 15px 0;
+}
+
+.word {
+  background: var(--panel2);
+  border: 1px solid #ffffff12;
+  border-radius: 13px;
+  padding: 13px;
+}
+
+.word b {
+  color: var(--gold-light);
+}
+
+.word span {
+  display: block;
+  color: var(--muted);
+  font-size: .87rem;
+  line-height: 1.9;
+  margin-top: 5px;
+}
+
+.note {
+  border: 1px solid #d8b87555;
+  background: #d8b8750d;
+  border-radius: 13px;
+  padding: 13px 15px;
+  line-height: 2;
+  margin: 14px 0;
+}
+
+.note ul {
+  padding-right: 22px;
+  margin-bottom: 5px;
+}
+
+.note li {
+  margin: 7px 0;
+}
+
+.compare {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+}
+
+.compare th, .compare td {
+  padding: 10px;
+  text-align: right;
+  border-bottom: 1px solid #ffffff20;
+  line-height: 1.8;
+}
+
+.compare th {
+  color: var(--gold-light);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.nav button {
+  flex: 1;
+}
+
+footer {
+  text-align: center;
+  color: #93a3a8;
+  font-size: .8rem;
+  padding: 10px 15px 30px;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media(max-width: 550px) {
+  .card { border-radius: 17px; }
+  .nav button { padding: 10px 7px; font-size: .85rem; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="eyebrow">تأمل و تدبر در کلام وحی</div>
+  <h1>آیات ۱۵ تا ۲۱ سوره جاثیه</h1>
+  <div class="subtitle">از شنیدن آیه تا فهم واژه‌ها و پیام‌های آن</div>
+</header>
+
+<main>
+
+<section class="card">
+  <h2 class="section-title">درباره سوره جاثیه</h2>
+
+  <p style="line-height:2">
+    <b>معنی نام سوره:</b>
+    «جاثیه» یعنی زانو‌زده یا به زانو درآمده.
+    این نام از آیه ۲۸ سوره گرفته شده است؛ جایی که از زانو زدن امت‌ها در روز قیامت سخن گفته می‌شود.
+  </p>
+
+  <div class="word-grid">
+    <div class="word">
+      <b>ترتیب در قرآن</b>
+      <span>سوره چهل‌وپنجم قرآن</span>
+    </div>
+    <div class="word">
+      <b>تعداد آیات</b>
+      <span>۳۷ آیه</span>
+    </div>
+    <div class="word">
+      <b>زمان و محل نزول</b>
+      <span>مکی؛ نازل‌شده پیش از هجرت پیامبر اسلام (ص)</span>
+    </div>
+    <div class="word">
+      <b>محورهای اصلی</b>
+      <span>توحید، نشانه‌های قدرت خدا، مسئولیت انسان، معاد و داوری عادلانه الهی</span>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>درباره سبب نزول:</b>
+    در متن تفسیر نورِ ارائه‌شده، سبب نزول جداگانه و مشخصی برای آیات ۱۵ تا ۲۱ نقل نشده است.
+    این آیات در ادامه فضای کلی سوره، درباره مسئولیت انسان، سرگذشت بنی‌اسرائیل،
+    پیروی از شریعت و تفاوت سرانجام نیکوکاران و بدکاران سخن می‌گویند.
+  </div>
+</section>
+
+<section class="card">
+
+  <div class="verse-top">
+    <span class="pill" id="verseLabel">سوره جاثیه · آیه ۱۵</span>
+    <span class="pill">متن عربی</span>
+  </div>
+
+  <div class="arabic" id="arabic"></div>
+  <div class="ornament">۞</div>
+
+  <div class="player">
+    <h3>🎧 قرائت آیه</h3>
+
+    <div class="audio-row">
+      <button class="primary" id="playBtn">▶ پخش آیه</button>
+      <button class="secondary" id="pauseBtn">Ⅱ مکث</button>
+      <button class="outline" id="stopBtn">■ پایان قرائت</button>
+      <button class="secondary" id="restartBtn">↺ از ابتدا</button>
+    </div>
+
+    <audio id="audio" preload="metadata" src="audio.mp3"></audio>
+
+    <div class="small">
+      فایل صوتی پیش‌فرض: <b>audio.mp3</b>؛ باید در کنار فایل HTML قرار بگیرد.
+      اگر نام یا مسیر فایل فرق دارد، مقدار src در کد را تغییر بده.
+    </div>
+
+    <div class="status" id="status">
+      برای شروع، دکمه پخش را بزن.
+    </div>
+
+    <div class="small">
+      زمان شروع و پایان هر آیه از قبل در کد تنظیم شده است.
+      پس از پایان قرائت، پخش متوقف و معنی آیه نمایش داده می‌شود.
+    </div>
+  </div>
+
+  <div class="translation" id="translation">
+    <h3>معنی آیه</h3>
+    <p id="meaning"></p>
+  </div>
+
+  <div class="analysis" id="analysis">
+    <h2 id="analysisTitle">تحلیل و تفسیر آیه</h2>
+    <div id="analysisBody"></div>
+  </div>
+
+  <div class="audio-row" style="margin-top:18px">
+    <button class="primary" id="showAnalysis" disabled>
+      نمایش تحلیل و تفسیر
+    </button>
+  </div>
+
+  <div class="nav">
+    <button class="secondary" id="prevBtn">→ آیه قبلی</button>
+    <button class="secondary" id="nextBtn">آیه بعدی ←</button>
+  </div>
+
+</section>
+</main>
+
+<footer>
+  طراحی‌شده برای مطالعه و تدبر در آیات قرآن ·
+  خلاصه نکته‌ها و پیام‌ها با استفاده از تفسیر نور، محسن قرائتی
+</footer>
+
+<script>
+
+/*
+زمان‌ها بر حسب ثانیه و از ابتدای فایل صوتی هستند.
+برای تغییر زمان‌ها، فقط مقادیر start و end را در همین قسمت تغییر بده.
+*/
+
+const verses = [
+
+{
+n: 15,
+start: 180,
+end: 193,
+
+arabic: "مَنْ عَمِلَ صَالِحًا فَلِنَفْسِهِ ۖ وَمَنْ أَسَاءَ فَعَلَيْهَا ۖ ثُمَّ إِلَىٰ رَبِّكُمْ تُرْجَعُونَ",
+
+meaning: "هرکس کار شایسته‌ای انجام دهد، به سود خود اوست و هرکس مرتکب بدی شود، به زیان خود اوست؛ سپس به سوی پروردگارتان بازگردانده می‌شوید.",
+
+analysis: `
+<p>
+محور آیه، <b>مسئولیت فردی انسان</b> است.
+نتیجه اخلاقی و اخروی انتخاب‌های هرکس به خودش بازمی‌گردد.
+خداوند از نیکی ما سودی نمی‌برد و گناه ما نیز به او زیانی نمی‌رساند؛
+این خود انسان است که از آثار انتخابش بهره‌مند یا متضرر می‌شود.
+</p>
+
+<h3>معانی واژه‌های مهم</h3>
+<div class="word-grid">
+<div class="word"><b>عَمِلَ</b><span>انجام داد؛ بر انجام آگاهانه و عملی دلالت دارد.</span></div>
+<div class="word"><b>صَالِحًا</b><span>شایسته و درست؛ کاری سازگار با حق و فرمان الهی.</span></div>
+<div class="word"><b>فَلِنَفْسِهِ</b><span>پس برای خود اوست؛ نتیجه کار خوب به خود فاعل برمی‌گردد.</span></div>
+<div class="word"><b>أَسَاءَ</b><span>بدی کرد؛ در برابر انجام کار صالح قرار دارد.</span></div>
+<div class="word"><b>فَعَلَيْهَا</b><span>پس بر زیان خود اوست؛ پیامد منفی عمل به خود انسان می‌رسد.</span></div>
+<div class="word"><b>تُرْجَعُونَ</b><span>بازگردانده می‌شوید؛ اشاره به بازگشت انسان‌ها به سوی خداوند.</span></div>
+</div>
+
+<div class="note">
+<b>نکته ادبی:</b>
+تقابل «لِنَفْسِهِ» و «عَلَيْهَا» پیام آیه را پررنگ می‌کند:
+خوبی به سود انسان و بدی به زیان اوست.
+</div>
+
+<div class="note">
+<b>جمع‌بندی تفسیر نور:</b>
+<ul>
+<li>سود کار نیک و زیان کار بد، در نهایت به خود انسان بازمی‌گردد.</li>
+<li>پاداش و کیفر الهی بر پایه عملکرد انسان و از روی عدالت است؛ خدا به کار خیر ما نیازی ندارد.</li>
+<li>بازگشت به سوی خدا قطعی است و یاد قیامت هم امیدبخش نیکوکاران و هم هشداردهنده بدکاران است.</li>
+</ul>
+</div>
+`
+},
+
+{
+n: 16,
+start: 196,
+end: 212,
+
+arabic: "وَلَقَدْ آتَيْنَا بَنِي إِسْرَائِيلَ الْكِتَابَ وَالْحُكْمَ وَالنُّبُوَّةَ وَرَزَقْنَاهُمْ مِنَ الطَّيِّبَاتِ وَفَضَّلْنَاهُمْ عَلَى الْعَالَمِينَ",
+
+meaning: "و به‌راستی به بنی‌اسرائیل کتاب و حکم و نبوت دادیم، و از روزی‌های پاکیزه به آنان بخشیدیم و آنان را بر جهانیان [روزگار خودشان] برتری دادیم.",
+
+analysis: `
+<p>
+این آیه نعمت‌ها و فرصت‌های بزرگی را یادآوری می‌کند که خداوند در اختیار بنی‌اسرائیل قرار داد.
+این یادآوری مقدمه‌ای برای فهم مسئولیت آنان در آیه بعد است:
+برخورداری از نعمت و هدایت، مسئولیت انسان را از بین نمی‌برد.
+</p>
+
+<h3>معانی واژه‌های مهم</h3>
+<div class="word-grid">
+<div class="word"><b>آتَيْنَا</b><span>عطا کردیم؛ بخششی از سوی خداوند.</span></div>
+<div class="word"><b>الْكِتَابَ</b><span>کتاب آسمانی؛ در اینجا به تورات و کتاب الهی بنی‌اسرائیل اشاره دارد.</span></div>
+<div class="word"><b>الْحُكْمَ</b><span>حکم، داوری و حکمت؛ فهم و داوری درست و فرمانروایی.</span></div>
+<div class="word"><b>النُّبُوَّةَ</b><span>نبوت؛ مقام پیامبری و دریافت پیام الهی.</span></div>
+<div class="word"><b>الطَّيِّبَاتِ</b><span>چیزهای پاکیزه و پسندیده؛ نعمت‌های حلال و مطلوب.</span></div>
+<div class="word"><b>فَضَّلْنَاهُمْ</b><span>آنان را برتری دادیم؛ برتری در دوران خودشان.</span></div>
+</div>
+
+<div class="note">
+<b>نکته تفسیری:</b>
+عبارت «عَلَى الْعَالَمِينَ» در این آیه به برتری بنی‌اسرائیل بر مردم زمان خودشان اشاره دارد؛
+نه برتری نژادی یا برتری همیشگی تک‌تک افراد این قوم.
+</div>
+
+<div class="note">
+<b>جمع‌بندی تفسیر نور:</b>
+<ul>
+<li>نعمت‌های معنوی مانند کتاب، حکم و نبوت پیش از نعمت‌های مادی آمده‌اند.</li>
+<li>همه نعمت‌ها از خداست و نباید سبب غرور شوند.</li>
+<li>پاکی و سامان‌یافتگی اقتصاد در کنار قانون و هدایت الهی معنا پیدا می‌کند.</li>
+<li>نافرمانی و ناسپاسی می‌تواند عزت یک جامعه را به ذلت تبدیل کند.</li>
+</ul>
+</div>
+`
+},
+
+{
+n: 17,
+start: 215,
+end: 242,
+
+arabic: "وَآتَيْنَاهُمْ بَيِّنَاتٍ مِنَ الْأَمْرِ ۖ فَمَا اخْتَلَفُوا إِلَّا مِنْ بَعْدِ مَا جَاءَهُمُ الْعِلْمُ بَغْيًا بَيْنَهُمْ ۚ إِنَّ رَبَّكَ يَقْضِي بَيْنَهُمْ يَوْمَ الْقِيَامَةِ فِيمَا كَانُوا فِيهِ يَخْتَلِفُونَ",
+
+meaning: "و دلایل روشنی از امر دین به آنان دادیم؛ پس اختلاف نکردند مگر پس از آنکه آگاهی به سراغشان آمد، آن هم از روی ستم و برتری‌جویی میان خودشان. بی‌تردید پروردگارت روز قیامت درباره آنچه در آن اختلاف می‌کردند میانشان داوری می‌کند.",
+
+analysis: `
+<p>
+این آیه می‌گوید بنی‌اسرائیل نشانه‌ها و آگاهی روشن دریافت کردند،
+اما بخشی از اختلاف‌هایشان پس از روشن‌شدن حقیقت و به انگیزه‌های نادرست شکل گرفت.
+پس هر اختلافی از ندانستن ناشی نمی‌شود؛ گاهی حسادت و برتری‌جویی مانع پذیرش حق می‌شود.
+</p>
+
+<h3>معانی واژه‌های مهم</h3>
+<div class="word-grid">
+<div class="word"><b>بَيِّنَاتٍ</b><span>دلایل و نشانه‌های روشن؛ جمع «بَيِّنَة».</span></div>
+<div class="word"><b>الْأَمْرِ</b><span>کار یا موضوع؛ در اینجا منظور امر دین و هدایت است.</span></div>
+<div class="word"><b>اخْتَلَفُوا</b><span>اختلاف کردند؛ در این سیاق اختلاف نکوهیده پس از روشن‌شدن حق.</span></div>
+<div class="word"><b>الْعِلْمُ</b><span>دانش و آگاهی؛ دانشی که حقیقت را برای آنان روشن کرده بود.</span></div>
+<div class="word"><b>بَغْيًا</b><span>از روی تجاوز، حسادت و برتری‌جویی.</span></div>
+<div class="word"><b>يَقْضِي</b><span>داوری و حکم می‌کند؛ اشاره به داوری نهایی خداوند.</span></div>
+</div>
+
+<div class="note">
+<b>نکته مهم:</b>
+آیه هر اختلاف علمی یا فکری را بد نمی‌داند؛
+نکوهش آن متوجه اختلافی است که پس از روشن‌شدن حق و از روی انگیزه‌های نادرست پدید می‌آید.
+</div>
+
+<div class="note">
+<b>جمع‌بندی تفسیر نور:</b>
+<ul>
+<li>خداوند دلایل روشن را در اختیار مردم می‌گذارد و حجت را تمام می‌کند.</li>
+<li>گاهی اختلاف از حسادت، منفعت‌طلبی و برتری‌جویی پس از روشن‌شدن حق پدید می‌آید.</li>
+<li>دانستن به‌تنهایی کافی نیست؛ انسان باید در برابر حقیقت فروتن باشد.</li>
+<li>داوری نهایی اختلاف‌ها با خداوند و در قیامت است.</li>
+</ul>
+</div>
+`
+},
+
+{
+n: 18,
+start: 244,
+end: 257,
+
+arabic: "ثُمَّ جَعَلْنَاكَ عَلَىٰ شَرِيعَةٍ مِنَ الْأَمْرِ فَاتَّبِعْهَا وَلَا تَتَّبِعْ أَهْوَاءَ الَّذِينَ لَا يَعْلَمُونَ",
+
+meaning: "سپس تو را بر راه و آیینی روشن از دین قرار دادیم؛ پس از آن پیروی کن و از خواسته‌های کسانی که آگاهی ندارند پیروی مکن.",
+
+analysis: `
+<p>
+پس از بیان اختلاف‌های برخاسته از انگیزه‌های نادرست، این آیه راه درست را نشان می‌دهد:
+پیروی از شریعت الهی، نه دنباله‌روی از تمایلات و خواسته‌های بی‌پایه.
+خطاب مستقیم به پیامبر است، اما برای همه پیروان او نیز درس دارد.
+</p>
+
+<h3>معانی واژه‌های مهم</h3>
+<div class="word-grid">
+<div class="word"><b>جَعَلْنَاكَ</b><span>تو را قرار دادیم؛ اشاره به تعیین مسیر الهی برای پیامبر.</span></div>
+<div class="word"><b>شَرِيعَةٍ</b><span>راه روشن و آیین؛ مجموعه راه و دستورهای الهی برای هدایت انسان.</span></div>
+<div class="word"><b>فَاتَّبِعْهَا</b><span>پس از آن پیروی کن؛ فعل امر و تأکید بر پایبندی عملی.</span></div>
+<div class="word"><b>أَهْوَاءَ</b><span>جمع «هَوَى»؛ خواسته‌ها و تمایلاتی که ممکن است انسان را از حق دور کنند.</span></div>
+<div class="word"><b>لَا تَتَّبِعْ</b><span>پیروی نکن؛ نهی از دنباله‌روی کورکورانه.</span></div>
+<div class="word"><b>يَعْلَمُونَ</b><span>می‌دانند؛ در اینجا کسانی که آگاهی لازم از حقیقت ندارند.</span></div>
+</div>
+
+<div class="note">
+<b>نکته تفسیری:</b>
+«شریعت» مسیر و معیار الهی را نشان می‌دهد؛
+«اهواء» تمایلات شخصی و بی‌معیاری را که ممکن است جای آن معیار را بگیرند.
+</div>
+
+<div class="note">
+<b>جمع‌بندی تفسیر نور:</b>
+<ul>
+<li>شریعت راهی برای رسیدن به زندگی حقیقی و هدایت الهی است.</li>
+<li>معیار پیروی، فرمان و راه خداست، نه هوس‌های بی‌پایه افراد ناآگاه.</li>
+<li>پیامبر نیز مأمور به پیروی از شریعت است.</li>
+<li>رهبر حق نباید زیر فشار پیشنهادهای جاهلانه از مسیر حق دور شود.</li>
+</ul>
+</div>
+`
+},
+
+{
+n: 19,
+start: 260,
+end: 276,
+
+arabic: "إِنَّهُمْ لَنْ يُغْنُوا عَنْكَ مِنَ اللَّهِ شَيْئًا ۚ وَإِنَّ الظَّالِمِينَ بَعْضُهُمْ أَوْلِيَاءُ بَعْضٍ ۖ وَاللَّهُ وَلِيُّ الْمُتَّقِينَ",
+
+meaning: "آنان هرگز نمی‌توانند در برابر خدا چیزی را از تو دفع کنند؛ و ستمکاران دوستان و پشتیبانان یکدیگرند، و خداوند سرپرست پرهیزکاران است.",
+
+analysis: `
+<p>
+این آیه ادامه فرمان آیه قبل است:
+پیامبر نباید به حمایت ستمکاران دل ببندد یا از مخالفت آنان از مسیر حق عقب‌نشینی کند.
+پشتیبانی گروه‌های ستمگر محدود است، اما سرپرستی و یاری خداوند جایگاهی دیگر دارد.
+</p>
+
+<h3>معانی واژه‌های مهم</h3>
+<div class="word-grid">
+<div class="word"><b>لَنْ</b><span>حرف نفی برای آینده؛ بر نفی مؤکد تأکید می‌کند.</span></div>
+<div class="word"><b>يُغْنُوا عَنْكَ</b><span>نمی‌توانند چیزی را از تو دفع کنند یا در برابر خدا بی‌نیازت سازند.</span></div>
+<div class="word"><b>الظَّالِمِينَ</b><span>ستمکاران؛ کسانی که از حق تجاوز می‌کنند.</span></div>
+<div class="word"><b>أَوْلِيَاء</b><span>جمع «وَلِيّ»؛ یاوران، دوستان نزدیک و پشتیبانان.</span></div>
+<div class="word"><b>وَلِيُّ</b><span>سرپرست و پشتیبان؛ درباره خداوند بیانگر ولایت و حمایت اوست.</span></div>
+<div class="word"><b>الْمُتَّقِينَ</b><span>پرهیزکاران؛ کسانی که خود را از گناه و نافرمانی حفظ می‌کنند.</span></div>
+</div>
+
+<div class="note">
+<b>تفاوت «أَوْلِيَاء» و «وَلِيّ»:</b>
+هر دو از ریشه «و ل ی» هستند و معنای نزدیکی و پشتیبانی دارند.
+«أَوْلِيَاء» جمع است و «وَلِيّ» مفرد.
+</div>
+
+<div class="note">
+<b>جمع‌بندی تفسیر نور:</b>
+<ul>
+<li>ستمگران ممکن است پشتیبان یکدیگر باشند، اما حمایت آنان در برابر داوری خدا سودی ندارد.</li>
+<li>خداوند یاور و سرپرست پرهیزکاران است.</li>
+<li>تقوا با دوری از ظلم و ظلم‌پذیری و دین‌داری همراه با بصیرت پیوند دارد.</li>
+</ul>
+</div>
+`
+},
+
+{
+n: 20,
+start: 278,
+end: 288,
+
+arabic: "هَٰذَا بَصَائِرُ لِلنَّاسِ وَهُدًى وَرَحْمَةٌ لِقَوْمٍ يُوقِنُونَ",
+
+meaning: "این [قرآن] مایه‌های بینایی و بصیرت برای مردم، و هدایت و رحمتی برای گروهی است که یقین دارند.",
+
+analysis: `
+<p>
+پس از سخن از شریعت و پرهیز از پیروی هوس‌ها،
+آیه قرآن و آموزه‌های الهی را وسیله بینایی درونی، هدایت و رحمت معرفی می‌کند.
+قرآن انسان را به دیدن حقیقت و تشخیص راه درست دعوت می‌کند.
+</p>
+
+<h3>معانی واژه‌های مهم</h3>
+<div class="word-grid">
+<div class="word"><b>بَصَائِرُ</b><span>جمع «بَصِيرَة»؛ بینش‌ها و روشنگرهایی که حقیقت را به انسان می‌شناسانند.</span></div>
+<div class="word"><b>لِلنَّاسِ</b><span>برای مردم؛ بیانگر گستردگی پیام قرآن برای انسان‌ها.</span></div>
+<div class="word"><b>هُدًى</b><span>هدایت و راهنمایی؛ نشان‌دادن راه درست.</span></div>
+<div class="word"><b>رَحْمَةٌ</b><span>مهربانی و رحمت؛ راهنمایی‌هایی برای خیر و سعادت انسان.</span></div>
+<div class="word"><b>يُوقِنُونَ</b><span>یقین دارند؛ باور استوار و اطمینان روشن، فراتر از گمان.</span></div>
+</div>
+
+<table class="compare">
+<tr><th>واژه</th><th>معنا</th></tr>
+<tr><td>بَصَائِر</td><td>قدرت دیدن و تشخیص حقیقت؛ بینش.</td></tr>
+<tr><td>هُدًى</td><td>نشان‌دادن مسیر درست و راهبری.</td></tr>
+<tr><td>رَحْمَة</td><td>خیر، لطف و بهره‌مندی از هدایت الهی.</td></tr>
+</table>
+
+<div class="note">
+<b>نکته لطیف:</b>
+ممکن است انسان چیزی را با چشم ببیند، اما حقیقت آن را درک نکند.
+«بصائر» به بینش درونی و توانایی فهمیدن حقیقت اشاره دارد.
+</div>
+
+<div class="note">
+<b>جمع‌بندی تفسیر نور:</b>
+<ul>
+<li>قرآن برای مردم روشنگر و بصیرت‌آفرین است.</li>
+<li>برای اهل یقین، هدایت و رحمت نیز به همراه دارد.</li>
+<li>«بصائر» حقیقت را آشکار می‌کند، «هدى» راه را نشان می‌دهد و «رحمة» خیر و بهره‌مندی از آن راه را بیان می‌کند.</li>
+</ul>
+</div>
+`
+},
+
+{
+n: 21,
+start: 290,
+end: 308,
+
+arabic: "أَمْ حَسِبَ الَّذِينَ اجْتَرَحُوا السَّيِّئَاتِ أَنْ نَجْعَلَهُمْ كَالَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ سَوَاءً مَحْيَاهُمْ وَمَمَاتُهُمْ ۚ سَاءَ مَا يَحْكُمُونَ",
+
+meaning: "آیا کسانی که مرتکب بدی‌ها شدند، پنداشته‌اند آنان را مانند کسانی قرار می‌دهیم که ایمان آورده و کارهای شایسته انجام داده‌اند، به‌گونه‌ای که زندگی و مرگشان یکسان باشد؟ چه بد داوری می‌کنند!",
+
+analysis: `
+<p>
+آیه با پرسشی انکاری، تصور یکسان‌بودن سرانجام نیکوکاران و بدکاران را رد می‌کند.
+مقصود این نیست که انسان‌های خوب همیشه در دنیا آسوده و انسان‌های بد همیشه گرفتارند؛
+بلکه معیار، ارزش اعمال و داوری عادلانه خداوند است.
+</p>
+
+<h3>معانی واژه‌های مهم</h3>
+<div class="word-grid">
+<div class="word"><b>أَمْ حَسِبَ</b><span>آیا گمان کرده‌اند؟ پرسشی برای رد و نکوهش یک تصور نادرست.</span></div>
+<div class="word"><b>اجْتَرَحُوا</b><span>مرتکب شدند و به دست آوردند؛ در اینجا انجام‌دادن و کسب‌کردن گناهان.</span></div>
+<div class="word"><b>السَّيِّئَاتِ</b><span>بدی‌ها و کارهای زشت؛ جمع «سَيِّئَة».</span></div>
+<div class="word"><b>آمَنُوا</b><span>ایمان آوردند؛ باور و پذیرش قلبی حقیقت.</span></div>
+<div class="word"><b>عَمِلُوا الصَّالِحَاتِ</b><span>کارهای شایسته انجام دادند؛ ایمان در کنار عمل صالح آمده است.</span></div>
+<div class="word"><b>سَوَاءً</b><span>یکسان و برابر.</span></div>
+<div class="word"><b>مَحْيَاهُمْ وَمَمَاتُهُمْ</b><span>زندگی و مرگشان؛ وضعیت و سرانجام دو گروه.</span></div>
+<div class="word"><b>سَاءَ مَا يَحْكُمُونَ</b><span>چه بد داوری می‌کنند؛ نکوهش قضاوت نادرست.</span></div>
+</div>
+
+<div class="note">
+<b>تفاوت‌های مهم:</b>
+«آمَنُوا» به باور اشاره دارد و «عَمِلُوا الصَّالِحَاتِ» به رفتار برخاسته از آن باور.
+همچنین «السَّيِّئَات» در برابر «الصَّالِحَات» قرار می‌گیرد.
+</div>
+
+<div class="note">
+<b>نکته تفسیری:</b>
+عدالت به معنای یکسان‌گرفتن همه رفتارها نیست.
+اگر نیت، انتخاب و عمل انسان‌ها متفاوت باشد، داوری عادلانه نیز باید این تفاوت‌ها را در نظر بگیرد.
+</div>
+
+<div class="note">
+<b>جمع‌بندی تفسیر نور:</b>
+<ul>
+<li>از نگاه عدالت الهی، نیکوکار و بدکار و سرانجام آن‌ها یکسان نیست.</li>
+<li>ایمان باید در کنار عمل صالح دیده شود.</li>
+<li>گناه و رفتار نادرست نیز در زندگی و سرانجام انسان اثر دارد.</li>
+<li>آیه داوری مبتنی بر خیال و برابر دانستن رفتارهای متفاوت را نکوهش می‌کند.</li>
+</ul>
+</div>
+`
+}
+
+];
+
+let current = 0;
+let completed = new Set();
+
+const audio = document.getElementById("audio");
+const $ = id => document.getElementById(id);
+
+function showVerse() {
+  const v = verses[current];
+
+  $("verseLabel").textContent = `سوره جاثیه · آیه ${v.n}`;
+  $("arabic").textContent = v.arabic;
+  $("meaning").textContent = v.meaning;
+
+  $("translation").classList.toggle("show", completed.has(v.n));
+  $("analysis").classList.remove("show");
+
+  $("showAnalysis").disabled = !completed.has(v.n);
+  $("showAnalysis").textContent = "نمایش تحلیل و تفسیر";
+
+  $("analysisTitle").textContent = `تحلیل و تفسیر آیه ${v.n}`;
+  $("analysisBody").innerHTML = v.analysis;
+
+  audio.pause();
+  audio.currentTime = 0;
+  audio.dataset.endTime = "";
+
+  $("status").textContent = completed.has(v.n)
+    ? "قرائت این آیه قبلاً تکمیل شده است."
+    : "برای شروع، دکمه پخش را بزن.";
+
+  $("prevBtn").disabled = current === 0;
+  $("nextBtn").disabled = current === verses.length - 1;
+}
+
+function finishVerse(message = "قرائت آیه تمام شد. حالا معنی آیه را بخوان.") {
+  const n = verses[current].n;
+
+  completed.add(n);
+  audio.dataset.endTime = "";
+
+  $("translation").classList.add("show");
+  $("showAnalysis").disabled = false;
+  $("status").textContent = message;
+
+  audio.pause();
+}
+
+$("playBtn").onclick = async () => {
+  try {
+    const v = verses[current];
+    const start = v.start;
+    const end = v.end;
+
+    if (audio.currentTime < start || audio.currentTime >= end) {
+      audio.currentTime = start;
+    }
+
+    audio.dataset.endTime = String(end);
+
+    await audio.play();
+
+    $("status").textContent =
+      "در حال پخش آیه " + v.n + "؛ در پایان، پخش خودکار متوقف می‌شود.";
+
+  } catch (error) {
+    $("status").textContent =
+      "فایل صوتی پیدا نشد یا قابل پخش نیست. فایل audio.mp3 را کنار سایت قرار بده.";
+  }
+};
+
+$("pauseBtn").onclick = () => {
+  audio.pause();
+  $("status").textContent =
+    "پخش موقتاً متوقف شد؛ برای ادامه دوباره پخش را بزن.";
+};
+
+$("stopBtn").onclick = () => {
+  finishVerse();
+};
+
+$("restartBtn").onclick = () => {
+  audio.pause();
+  audio.currentTime = verses[current].start;
+  $("status").textContent = "از ابتدای آیه آماده پخش است.";
+};
+
+audio.addEventListener("timeupdate", () => {
+  const end = audio.dataset.endTime;
+
+  if (end && audio.currentTime >= Number(end)) {
+    audio.currentTime = Number(end);
+    finishVerse("قرائت این آیه به پایان رسید. معنی آیه نمایش داده شد.");
+  }
+});
+
+audio.addEventListener("ended", () => {
+  finishVerse("پخش فایل صوتی به پایان رسید. معنی آیه نمایش داده شد.");
+});
+
+$("showAnalysis").onclick = () => {
+  if (!completed.has(verses[current].n)) return;
+
+  $("analysis").classList.add("show");
+  $("showAnalysis").textContent = "تحلیل و تفسیر نمایش داده شد";
+};
+
+$("prevBtn").onclick = () => {
+  if (current > 0) {
+    current--;
+    showVerse();
+  }
+};
+
+$("nextBtn").onclick = () => {
+  if (current < verses.length - 1) {
+    current++;
+    showVerse();
+  }
+};
+
+showVerse();
+
+</script>
+</body>
+</html>
